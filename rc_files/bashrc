@@ -159,3 +159,9 @@ alias addlast='history | tail -n2 | head -n1  | cut -d" " -f3- >> process.sh '
 alias update='source ~/.bashrc'
 alias pc='proxychains'
 
+### for git
+alias ga='git add -A'
+alias gst='git status'
+alias gm='git commit -m'
+alias gh='git hist'
+alias gps='git push origin master'
