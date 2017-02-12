@@ -1,0 +1,6 @@
+#this was used for screen to scroll screen with mouse middle button in cmd screen instead of show previous cmd line
+termcapinfo xterm* ti@:te@  
+hardstatus on
+hardstatus alwayslastline
+hardstatus string "%{.bW}%-w%{.rY}%n %t%{-}%+w %=%{..G} %H(%l) %{..Y} %Y/%m/%d %c:%s "
+escape ^Tt

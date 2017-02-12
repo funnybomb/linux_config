@@ -1,0 +1,202 @@
+set nocompatible              " be iMproved, required
+filetype off                  " required
+
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+" alternatively, pass a path where Vundle should install plugins
+"call vundle#begin('~/some/path/here')
+
+" let Vundle manage Vundle, required
+Plugin 'VundleVim/Vundle.vim'
+
+" The following are examples of different formats supported.
+" Keep Plugin commands between vundle#begin/end.
+" plugin on GitHub repo
+Plugin 'tpope/vim-fugitive'
+Plugin 'Raimondi/delimitMate'
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'scrooloose/syntastic'
+Plugin 'nvie/vim-flake8'
+Plugin 'jaxbot/semantic-highlight.vim'
+Plugin 'tell-k/vim-autopep8'
+
+" plugin from http://vim-scripts.org/vim/scripts.html
+"Plugin 'L9'
+" Git plugin not hosted on GitHub
+"Plugin 'git://git.wincent.com/command-t.git'
+" git repos on your local machine (i.e. when working on your own plugin)
+"Plugin 'file:///home/gmarik/path/to/plugin'
+" The sparkup vim script is in a subdirectory of this repo called vim.
+" Pass the path to set the runtimepath properly.
+Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
+" Install L9 and avoid a Naming conflict if you've already installed a
+" different version somewhere else.
+Plugin 'ascenator/L9', {'name': 'newL9'}
+"auto complete
+Plugin 'Valloric/YouCompleteMe'
+
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
+" To ignore plugin indent changes, instead use:
+"filetype plugin on
+"
+" Brief help
+" :PluginList       - lists configured plugins
+" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
+" :PluginSearch foo - searches for foo; append `!` to refresh local cache
+" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
+"
+" see :h vundle for more details or wiki for FAQ
+" Put your non-Plugin stuff after this line
+
+" autopep8 vim set up
+let g:autopep8_max_line_length=100
+" solarized set up
+let g:solarized_termcolors=256
+let g:solarized_termtrans=1
+let g:solarized_contrast="normal"
+"let g:solarized_visibility="high"
+"let g:solarized_degrade = 1
+"let g:solarized_bold = 1 
+"let g:solarized_underline = 1 
+"let g:solarized_contrast="high"
+"g:solarized_termcolors= 16 | 256 
+"g:solarized_termtrans = 0 | 1 
+"g:solarized_degrade = 0 | 1 
+"g:solarized_bold = 1 | 0 
+"g:solarized_underline = 1 | 0 
+"g:solarized_italic = 1 | 0 
+"g:solarized_contrast = "normal"| "high" or "low" 
+"g:solarized_visibility= "normal"| "high" or "low" 
+syntax enable
+"let python_highlight_all=1
+"call togglebg#map("<F5>")
+set background=dark
+"set background=light
+colorscheme solarized
+"if has('gui_running')
+"else
+"  colorscheme zenburn
+"endif
+"
+"YCM configuration
+let g:ycm_autoclose_preview_window_after_completion = 1
+
+nnoremap <F5> :SemanticHighlightToggle<CR>
+nnoremap <F3> :set list!<CR>
+nnoremap <F4> :set number!<CR>
+set showcmd
+set number
+set magic
+set autoindent
+set cindent
+set clipboard=unnamed
+set pastetoggle=<F11>
+" Enable CursorLine
+set cursorline
+" " Default Colors for CursorLine
+highlight  CursorLine ctermbg=243 ctermfg=None
+" " Change Color when entering Insert Mode
+autocmd InsertEnter * highlight  CursorLine ctermbg=None ctermfg=None
+" " Revert Color to default when leaving Insert Mode
+autocmd InsertLeave * highlight  CursorLine ctermbg=None ctermfg=None
+
+set cursorcolumn
+" " Default Colors for CursorLine
+highlight  Cursorcolumn ctermbg=243 ctermfg=None
+" " Change Color when entering Insert Mode
+autocmd InsertEnter * highlight  Cursorcolumn ctermbg=None ctermfg=None
+" " Revert Color to default when leaving Insert Mode
+autocmd InsertLeave * highlight  Cursorcolumn ctermbg=239 ctermfg=None
+
+set fdm=marker
+set sw=4 ts=4
+set expandtab  "to use 4 space replace tab 20160724
+set number
+set list
+set lcs=tab:\|\ ,nbsp:%,trail:-
+highlight LeaderTab guifg=#666666
+match LeaderTab /^\t/
+let g:tabular_loaded = 1 
+set laststatus=2
+set statusline=%2*%n%m%r%h%w%*\ %F\ %1*[FORMAT=%2*%{&ff}:%{&fenc!=''?&fenc:&enc}%1*]\ [TYPE=%2*%Y%1*]\ [COL=%2*%03v%1*]\ [ROW=%2*%03l%1*/%3*%L(%p%%)%1*]\
+hi User1 guifg=gray
+hi User2 guifg=red
+hi User3 guifg=white
+
+" When started as "evim", evim.vim will already have done these settings.
+if v:progname =~? "evim"
+  finish
+endif
+
+
+" Use Vim settings, rather then Vi settings (much better!).
+" This must be first, because it changes other options as a side effect.
+
+" allow backspacing over everything in insert mode
+set backspace=indent,eol,start
+
+if has("vms")
+  set nobackup " do not keep a backup file, use versions instead
+else
+  set backup " keep a backup file
+endif
+set nobackup " do not keep a backup file, use versions instead
+set history=550 " keep 550 lines of command line history
+set incsearch " do incremental searching
+
+" For Win32 GUI: remove 't' flag from 'guioptions': no tearoff menu entries
+" let &guioptions = substitute(&guioptions, "t", "", "g")
+
+" Don't use Ex mode, use Q for formatting
+map Q gq
+
+
+" In many terminal emulators the mouse works just fine, thus enable it.
+"set mouse=a
+
+" Switch syntax highlighting on, when the terminal has colors
+" Also switch on highlighting the last used search pattern.
+if &t_Co > 2 || has("gui_running")
+  syntax on
+  set hlsearch
+endif
+
+
+" Only do this part when compiled with support for autocommands.
+if has("autocmd")
+
+  " Enable file type detection.
+  " Use the default filetype settings, so that mail gets 'tw' set to 72,
+  " 'cindent' is on in C files, etc.
+  " Also load indent files, to automatically do language-dependent indenting.
+
+  " Put these in an autocmd group, so that we can delete them easily.
+  augroup vimrcEx
+  au!
+
+  " For all text files set 'textwidth' to 78 characters.
+  autocmd FileType text setlocal textwidth=78
+
+  " When editing a file, always jump to the last known cursor position.
+  " Don't do it when the position is invalid or when inside an event handler
+  " (happens when dropping a file on gvim).
+  autocmd BufReadPost *
+    \ if line("'\"") > 0 && line("'\"") <= line("$") |
+    \   exe "normal! g`\"" |
+    \ endif
+
+  augroup END
+
+else
+
+  set autoindent " always set autoindenting on
+
+endif " has("autocmd")
+
+" Convenient command to see the difference between the current buffer and the
+" file it was loaded from, thus the changes you made.
+command DiffOrig vert new | set bt=nofile | r # | 0d_ | diffthis
+\ | wincmd p | diffthis
