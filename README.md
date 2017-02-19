@@ -174,7 +174,5 @@ conda install htmd
 ## 配置vim, bashrc等 to be done (after git config)
 1. 配置vim, 安装 
 
-
-
-
+为什么写md写的不对
 
