@@ -23,7 +23,7 @@ git clone https://github.com/funnybomb/linux_config.git
 cd linux config && bash setup_vim_screen_bash.sh
 
 ### ss config and install chrome GFW in china
-cd cd ss_config && bash shadowsocks_config.sh
+cd ss_config && bash shadowsocks_config.sh
 
 
 # ubuntu 16.04.01 setup & config
