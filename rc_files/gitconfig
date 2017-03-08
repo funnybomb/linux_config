@@ -1,0 +1,18 @@
+[user]
+	name = funnybomb
+	email = feicaiyi@gmail.com
+[alias]
+	ci = commit -m
+	ca = commit -a -m
+	pl = pull
+	ps = push
+	co = checkout
+	st = status  
+	br = branch  
+	hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short  
+	type = cat-file -t  
+	dump = cat-file -p  
+	st = status
+	l = log --pretty=oneline -n 20 --graph --abbrev-commit
+	hist = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
+	
