@@ -158,6 +158,8 @@ alias sedi='sed -i 's/\s\+/\t/''
 alias addlast='history | tail -n2 | head -n1  | cut -d" " -f3- >> process.sh '
 alias update='source ~/.bashrc'
 alias pc='proxychains'
+alias sap='source activate py27'
+alias sdp='source deactivate py27'
 
 ### for git
 alias ga='git add -A'
@@ -165,3 +167,13 @@ alias gst='git status'
 alias gm='git commit -m'
 alias gh='git hist'
 alias gps='git push origin master'
+
+# added by Anaconda3 4.2.0 installer
+export PATH="/home/fcy/anaconda3/bin:$PATH"
+export PATH="$PATH:/home/fcy/SeqMule/bin"
+export PATH="$PATH:/home/fcy/SeqMule/exe"
+#export PATH="$PATH:/home/fcy/SeqMule/exe/bwa"
+#export PATH="$PATH:/home/fcy/SeqMule/exe/samtools"
+
+# for ngs analysis
+alias gatk='java -jar /home/fcy/bin/GenomeAnalysisTK.jar'
