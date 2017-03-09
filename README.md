@@ -11,13 +11,15 @@ including
 1. bashrc
 2. vimrc
 3. screenrc
-4. gitconfig (to be done)
+4. gitconfig
 5. NVIDIA driver setup (to be done)
-6. etc
+6. chrome on linux and shadowsocks and 
 
 ## install
-
+```
 git clone https://github.com/funnybomb/linux_config.git
+# if I want to modify the setup, git pull or git clone ssh
+```
 
 ### rc config
 cd linux config && bash setup_vim_screen_bash.sh
