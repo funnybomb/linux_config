@@ -155,7 +155,7 @@ alias sck='screenkill.sh'
 alias scd='screen -D -RR'
 #alias ls='/bin/ls -F --color=tty --show-control-chars'
 alias sedi='sed -i 's/\s\+/\t/''
-alias addlast='history | tail -n2 | head -n1  | cut -d" " -f3- >> process.sh '
+alias addlast='history | tail -n2 | head -n1  | cut -d" " -f7- >> ~/process.sh '
 alias update='source ~/.bashrc'
 alias pc='proxychains'
 alias sap='source activate py27'
@@ -163,9 +163,10 @@ alias sdp='source deactivate py27'
 
 ### for git
 alias ga='git add -A'
+alias gc='git diff --cached'
 alias gst='git status'
 alias gm='git commit -m'
-alias gh='git hist'
+alias gl='git hist'
 alias gps='git push origin master'
 
 # added by Anaconda3 4.2.0 installer
@@ -177,3 +178,4 @@ export PATH="$PATH:/home/fcy/SeqMule/exe"
 
 # for ngs analysis
 alias gatk='java -jar /home/fcy/bin/GenomeAnalysisTK.jar'
+alias picard='java -jar /home/fcy/bin/picard.jar'
